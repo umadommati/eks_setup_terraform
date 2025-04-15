@@ -12,7 +12,7 @@ pipeline {
         stage('CLONE SCM') {
             steps {
                 echo 'Cloning code from GitHub...'
-                git branch: 'main', url: 'https://github.com/adarsh0331/ultimate-devops-project-aws.git'
+                git branch: 'main', url: 'https://github.com/umadommati/eks_setup_terraform.git'
             }
         }
 
@@ -53,7 +53,7 @@ pipeline {
                 // Initialize Terraform
                 echo 'Initializing Terraform...'
             sh '''
-                        cd eks-install
+                
                         terraform init
                     '''
                 
@@ -65,7 +65,7 @@ pipeline {
                 // Run Terraform plan
                 echo 'Running Terraform Plan...'
                  sh '''
-                        cd eks-install
+                
                         terraform plan -out=tfplan
                     '''
             }
@@ -76,7 +76,7 @@ pipeline {
                 // Apply Terraform changes
                 echo 'Applying Terraform changes...'
                  sh '''
-                        cd eks-install
+                
                       terraform apply -auto-approve tfplan
                     '''
             }
