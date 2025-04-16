@@ -4,7 +4,7 @@ pipeline {
 
     environment {
         // Define environment variables
-        AWS_ACCESS_KEY_ID = credentials('aws-key') // AWS credentials (if needed)
+        AWS_ACCESS_KEY_ID = credentials('aws-access-key') // AWS credentials (if needed)
         AWS_SECRET_ACCESS_KEY = credentials('aws-secret') // AWS credentials (if needed)
     }
 
